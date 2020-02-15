@@ -17,19 +17,18 @@ let waiting = [];
 
 //Main
 app.get("/", function (req, res) {
-    res.send("success");
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
-//dont look here
 
 //Tables
 app.get("/reserve", function (req, res) {
-    return res.json(reserve);
+    res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
 //Tables
 app.get("/tables", function (req, res) {
-    return res.json(tables);
+    res.sendFile(path.join(__dirname, "tables.html"));
 });
 
 //Make Reservation
