@@ -4,12 +4,12 @@ A restaurant reservation app that takes user input and reserves them a table. It
 ![screenshot](screenshot.png)
 
 # Technologies 
-HTML
-CSS
-Bootstrap
-Javascript
-jQuery
-Node.js
+- HTML
+- CSS
+- Bootstrap
+- Javascript
+- jQuery
+- Node.js
 
 # User Story
 AS a restaurant goer,
@@ -17,10 +17,10 @@ I WANT to reserve a table, or be put on a wait list
 SO THAT I can have a guaranteed spot when I arrive at restaurant 
 
 # Contributors
-Alan - https://github.com/amargolies88
-Rojel - https://github.com/rojel83
-Micah - https://github.com/MESellassie
-Iris - https://github.com/iviruet
+- Alan - https://github.com/amargolies88
+- Rojel - https://github.com/rojel83
+- Micah - https://github.com/MESellassie
+- Iris - https://github.com/iviruet
 
 # Deployed Link
 
