@@ -18,17 +18,17 @@ let waiting = [];
 let guest1 = new Guest()
 //Home (index.html)
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "index.html"));
+    res.sendFile(path.join(__dirname, "html/index.html"));
 });
 
 //Reserve
 app.get("/reserve", function (req, res) {
-    res.sendFile(path.join(__dirname, "reserve.html"));
+    res.sendFile(path.join(__dirname, "html/reserve.html"));
 });
 
 //Tables
 app.get("/tables", function (req, res) {
-    res.sendFile(path.join(__dirname, "tables.html"));
+    res.sendFile(path.join(__dirname, "html/tables.html"));
 });
 
 // API CALLS
