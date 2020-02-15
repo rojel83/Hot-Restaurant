@@ -1,10 +1,9 @@
 class Guest {
-    constructor(table, id, name, email, phone) {
-        this.table = table;
-        this.id = id;
+    constructor(name, phone, email, id) {
         this.name = name;
-        this.email = email;
         this.phone = phone;
+        this.email = email;
+        this.id = id;
     }
     getTable() {
         return this.table;
