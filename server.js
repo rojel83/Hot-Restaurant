@@ -20,6 +20,8 @@ app.get("/", function (req, res) {
     res.send("success");
 });
 
+//dont look here
+
 //Tables
 app.get("/reserve", function (req, res) {
     return res.json(reserve);
