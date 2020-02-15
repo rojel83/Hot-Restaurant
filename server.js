@@ -41,8 +41,8 @@ app.get("/api/waiting", function (req, res) {
 });
 
 app.post("/api/guest", function (req, res) {
+    
     const newguest = new Guest(req.body.name, req.body.phone, req.body.email, req.body.id);
-
     let alreadyReserved = false;
 
     for (let i = 0; i < reserve.length; i++) {
@@ -54,7 +54,11 @@ app.post("/api/guest", function (req, res) {
     }
 
     if (!alreadyReserved) addGuest(newguest);
-    return alreadyReserved;
+    res.json(alreadyReserved);
+
+    console.log(reserve);
+    console.log(waiting);
+
 });
 
 app.listen(PORT, function () {
