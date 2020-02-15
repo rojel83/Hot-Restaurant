@@ -78,5 +78,43 @@
     </div>
 
 </body>
+<script type="text/javascript">
+    $(".submit").on("click", function(event) {
+        event.preventDefault();
+
+        // Here we grab the form elements
+        const newResservation = {
+            customerName: $("#name").val().trim(),
+            phoneNumber: $("#phone").val().trim(),
+            customerEmail: $("#email").val().trim(),
+            customerID: $("#unique-id").val().trim()
+        };
+
+        console.log(newResservation);
+
+
+        $.post("/api/tables", newResservation,
+            function(data) {
+
+                // If a table is available... tell user they are booked.
+                if (data) {
+                    alert("You are booked!");
+                }
+
+                // If a table is available... tell user they on the waiting list.
+                else {
+                    alert("you are on the waiting list");
+                }
+
+                // Clear the form when submitting
+                $("#name").val("");
+                $("#phone").val("");
+                $("#email").val("");
+                $("#unique-id").val("");
+
+            });
+
+    });
+</script>
 
 </html>
