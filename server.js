@@ -15,8 +15,7 @@ let reserve = ["test-guest-1", "test-guest-2"];
 let waiting = [];
 
 // GUEST TESTING
-let guest1 = new Guest(1)
-
+let guest1 = new Guest()
 //Home (index.html)
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "index.html"));
@@ -41,21 +40,9 @@ app.get("/api/waiting", function (req, res) {
     return res.json(waiting);
 });
 
-
-app.get("/url1", function (req, res) {
-    res.sendFile(path.join(__dirname, "url1.html"));
-});
-app.get("/url2", function (req, res) {
-    res.sendFile(path.join(__dirname, "url2.html"));
-});
-app.get("/url3", function (req, res) {
-    res.sendFile(path.join(__dirname, "url3.html"));
-});
-
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
 });
-
 
 // Table
     // ID
