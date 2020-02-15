@@ -4,24 +4,25 @@ const path = require("path");
 const Guest = require("./guest");
 
 const app = express();
-const PORT1 = 8088;
+const PORT = process.env.PORT || 8088;
 
+// MIDDLEWEAR
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-let guest1 = new Guest(3, "goat", "goat", "goat", "llama");
-console.log(guest1);
 //Data Variables
 let reserve = ["test-guest-1", "test-guest-2"];
 let waiting = [];
 
-//Main
+// GUEST TESTING
+let guest1 = new Guest(1)
+
+//Home (index.html)
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "index.html"));
 });
 
-
-//Tables
+//Reserve
 app.get("/reserve", function (req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
 });
@@ -31,8 +32,12 @@ app.get("/tables", function (req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
 });
 
-//Make Reservation
-app.get("/waiting", function (req, res) {
+// API CALLS
+app.get("/api/reserve", function (req, res) {
+    return res.json(reserve);
+});
+
+app.get("/api/waiting", function (req, res) {
     return res.json(waiting);
 });
 
@@ -47,8 +52,8 @@ app.get("/url3", function (req, res) {
     res.sendFile(path.join(__dirname, "url3.html"));
 });
 
-app.listen(PORT1, function () {
-    console.log("App listening on PORT " + PORT1);
+app.listen(PORT, function () {
+    console.log("App listening on PORT " + PORT);
 });
 
 
